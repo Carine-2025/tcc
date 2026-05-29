@@ -1,0 +1,19 @@
+# Spring Boot
+projeto_tcc/target/
+
+# Eclipse
+projeto_tcc/.project
+projeto_tcc/.classpath
+projeto_tcc/.settings/
+
+# VS Code
+.vscode/
+
+# Arquivos sensíveis
+projeto_tcc/src/main/resources/application.properties
+
+# Logs
+*.log
+
+# ZIP
+*.zip
