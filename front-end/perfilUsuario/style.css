@@ -1,0 +1,16 @@
+body {
+    margin: 50px 50px 50px 50px;
+}
+
+.container {
+    border: 10px solid rgb(149, 207, 235);
+    border-radius: 30px;
+    height: 90vh;
+    padding: 50px;
+}
+
+h1 {
+    text-align: center;
+    color: darkblue;
+    margin-bottom: 90px;
+}
