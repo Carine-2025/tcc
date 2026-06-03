@@ -2,20 +2,78 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+
+    <!-- Font Awesome para os ícones -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
     <script src="./script.js" defer></script>
-    <!defer: adia a execução do JavaScript até que o HTML
-    seja totalmente carregado, melhorando a velocidade de carregamento
-    da página.>
-    <title>Projeto API</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Perfil do Usuário</h1>
-        <h3 class="nome">Nome</h3>
-        <h3 class="email">Email</h3>
-        <h3 class="telefone">Telefone</h3>
-    </div>
+
+    <main class="container">
+
+        <h1>Bem vindo, Ana</h1>
+
+        <section class="card">
+
+            <div class="info-item">
+                <div class="icon dark">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+
+                <div class="info-content">
+                    <span class="label">Nome</span>
+                    <p class="value">Ana Silva</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="info-item">
+                <div class="icon light">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+
+                <div class="info-content">
+                    <span class="label">Email</span>
+                    <p class="value">ana.silva@email.com</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="info-item">
+                <div class="icon light">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+
+                <div class="info-content">
+                    <span class="label">Telefone</span>
+                    <p class="value">+55 11 98765-4321</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="actions">
+                <button class="btn btn-primary">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                    Editar perfil
+                </button>
+
+                <button class="btn btn-danger">
+                    <i class="fa-regular fa-trash-can"></i>
+                    Excluir perfil
+                </button>
+            </div>
+
+        </section>
+
+    </main>
+
 </body>
 </html>

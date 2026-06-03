@@ -2,22 +2,68 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
     <script src="./script.js" defer></script>
-    <!defer: adia a execução do JavaScript até que o HTML
-    seja totalmente carregado, melhorando a velocidade de carregamento
-    da página.>
-    <title>Projeto API</title>
 </head>
 <body>
-    <div class="container">
-        <h1>LOGIN</h1>
-        <form action="">
-            <input type="email" class="email"name="email" placeholder="Insira seu e-mail">
-            <input type="password" class="senha" name="senha" placeholder="Insira sua senha">
-            <button>ENTRAR</button>
-        </form>
-    </div>
+
+    <main class="login-container">
+
+        <div class="login-header">
+            <h1>Entrar</h1>
+            <p>Faça login para acessar sua conta</p>
+        </div>
+
+        <section class="login-card">
+
+            <form>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+
+                    <div class="input-group">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="seu@email.com"
+                            required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+
+                    <div class="input-group">
+                        <i class="fa-solid fa-lock"></i>
+                        <input
+                            type="password"
+                            id="senha"
+                            placeholder="••••••••"
+                            required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-login">
+                    Entrar
+                </button>
+
+            </form>
+
+            <p class="register-text">
+                Não tem uma conta?
+                <a href="#">Cadastrar usuário</a>
+            </p>
+
+        </section>
+
+    </main>
+
 </body>
 </html>
