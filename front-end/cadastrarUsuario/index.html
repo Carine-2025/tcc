@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto API</title>
-    
+    <title>Cadastro de Usuário</title>
+
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js" defer></script>
-    <!defer: adia a execução do JavaScript até que o HTML
-    seja totalmente carregado, melhorando a velocidade de carregamento
-    da página.>
-    
+    <!defer: adia a execução do JavaScript até que o HTML seja totalmente carregado, melhorando a velocidade de
+        carregamento da página.>
+
 </head>
+
 <body>
-    <div class="container">
-        <h1>CADASTRO DE USUARIO</h1>
+    <div class="main-wrapper">
+    <div class="cabecalho">
+        <h1>Cadastro de Usuário</h1>
         <p class="subtitle">Preencha os dados para criar sua conta</p>
+    </div>
+    <div class="container">
         <form action="">
             <input type="text" class="nome" name="nome" placeholder="Nome">
-            <input type="email" class="email"name="email" placeholder="Email">
+            <input type="email" class="email" name="email" placeholder="Email">
             <input type="password" class="senha" name="senha" placeholder="Senha">
-            <input type="text" class="telefone"name="tel" placeholder="Telefone">
+            <input type="text" class="telefone" name="tel" placeholder="Telefone">
             <button>Cadastrar</button>
+            <a href="">Já está cadastrado? Faça login</a>
         </form>
     </div>
+    </div>
+    </div>
 </body>
+
 </html>
 
-<!Open with Live Server: abre o arquivo index.html no navegador para visualizar as alterações em tempo real.
-Basta clicar com o botão direito no arquivo index.html e selecionar "Open with Live
+<!Open with Live Server: abre o arquivo index.html no navegador para visualizar as alterações em tempo real. Basta
+    clicar com o botão direito no arquivo index.html e selecionar "Open with Live
 Server" para iniciar o servidor local. A extensão Live Server deve ser instalada previamente.>

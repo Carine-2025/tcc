@@ -86,10 +86,10 @@ hr {
 
 .btn {
     border: none;
-    border-radius: 12px;
+    
     cursor: pointer;
     font-size: 1.1rem;
-    padding: 16px 24px;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,20 +101,41 @@ hr {
     flex: 1;
     background-color: #02021f;
     color: white;
+    padding: 16px 24px;
+    border-radius: 12px;
 }
 
 .btn-primary:hover {
-    opacity: 0.9;
+    background-color: gray;
 }
 
 .btn-danger {
     background-color: #fdecec;
     color: #e53935;
     min-width: 190px;
+    padding: 16px 24px;
+    border-radius: 12px;
 }
 
 .btn-danger:hover {
     background-color: #f9dddd;
+}
+
+.btn-primary:hover {
+    background-color: gray;
+}
+
+.btn-secundary {
+   
+    background-color: gray;
+    color: white;
+    border-radius: 50px;
+    width: 70px;
+    height: 70px;
+}
+
+.btn-secundary:hover {
+    background-color: rgb(187, 185, 185);
 }
 
 @media (max-width: 768px) {
