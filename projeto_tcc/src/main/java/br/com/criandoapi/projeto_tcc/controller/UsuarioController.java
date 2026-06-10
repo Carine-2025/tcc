@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.criandoapi.projeto_tcc.DAO.IUsuario;
 import br.com.criandoapi.projeto_tcc.model.Usuario;
+import br.com.criandoapi.projeto_tcc.service.UsuarioService;
 
 @RestController
 @CrossOrigin("*")//libera todas as entradas que vierem da máquina
@@ -23,11 +23,11 @@ import br.com.criandoapi.projeto_tcc.model.Usuario;
 public class UsuarioController {
 	
 	@Autowired
-	private IUsuario dao;
+	private UsuarioService service;
 	
 	@GetMapping
 	public List<Usuario> listaUsuarios () {
-		return (List<Usuario>) dao.findAll();
+		return service.listarUsuarios();
 		
 	//@GetMapping("/usuarios") Endpoint que lista os usuários existentes no banco. Ele foi retirado daqui e colocado em @RequestMapping para ser reaproveitado em outras rotas.
 	//public List<Usuario> listaUsuarios () {
@@ -36,21 +36,17 @@ public class UsuarioController {
 	
 	@PostMapping	
 	public Usuario criarUsuario (@RequestBody Usuario usuario) {
-		Usuario usuarioNovo = dao.save(usuario);
-		return usuarioNovo;
+		return service.criarUsuario(usuario);
 	}
 	
 	@PutMapping
 	public Usuario editarUsuario (@RequestBody Usuario usuario) {
-		Usuario usuarioNovo = dao.save(usuario);
-		return usuarioNovo;
+		return service.editarUsuario(usuario);
 	}	
 	
 	@DeleteMapping("/{id}")
 	public Optional<Usuario> excluirUsuario (@PathVariable Integer id){
-		Optional<Usuario> usuario = dao.findById(id);
-	  	dao.deleteById(id);
-	  	return usuario;
+		return service.excluirUsuario(id);
 	}
 }
 
