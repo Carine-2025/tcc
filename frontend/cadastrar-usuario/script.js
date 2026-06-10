@@ -1,19 +1,19 @@
 const formulario = document.querySelector("form");
-const Inome = document.querySelector(".nome");  
-const Iemail = document.querySelector(".email");  
-const Isenha = document.querySelector(".senha");  
-const Itelefone = document.querySelector(".telefone"); 
+const Inome = document.querySelector(".nome");
+const Iemail = document.querySelector(".email");
+const Isenha = document.querySelector(".senha");
+const Itelefone = document.querySelector(".telefone");
 
 function cadastrar() {
 
     fetch("http://localhost:8080/usuarios",
         {
-            headers:{
+            headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             method: "POST",
-            body: JSON.stringify ({
+            body: JSON.stringify({
                 nome: Inome.value,
                 email: Iemail.value,
                 senha: Isenha.value,
@@ -21,11 +21,26 @@ function cadastrar() {
             }),
 
         })
-        .then(function(res){ console.log(res) })
-        .catch(function(res){ console.log(res) }) 
+        .then(function (res) {
+            console.log(res);
+
+            if (res.ok) {
+                alert("Cadastro realizado com sucesso!");
+                limpar();
+            } else {
+                alert("Erro ao cadastrar usuário.");
+            }
+        })
+        .catch(function (erro) {
+            console.log(erro);
+
+            alert("Erro ao conectar com o servidor.");
+        })
+
+
 };
 
-function limpar (){
+function limpar() {
     Inome.value = "";
     Iemail.value = "";
     Isenha.value = "";
@@ -35,7 +50,6 @@ function limpar (){
 formulario.addEventListener("submit", function (event) {
     event.preventDefault(); // Impede o envio do formulário
 
-   cadastrar(); // Chama a função de cadastro
-   limpar();
+    cadastrar(); // Chama a função de cadastro
 });
 
