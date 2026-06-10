@@ -36,4 +36,13 @@ public class UsuarioService {
 
         return usuario;
     }
+    
+    public Usuario login(String email, String senha) {
+    	return dao.findByEmailAndSenha(email, senha);
+    }
+    
+    public Optional<Usuario> buscarPorId(Integer id) {
+    	return dao.findById(id);
+    }
 }
+
