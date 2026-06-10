@@ -1,37 +1,26 @@
-const formulario = document.querySelector("form");
-const Iemail = document.querySelector("email");  
-const Isenha = document.querySelector("senha");  
 
+const formulario = document.getElementById("form-login");
 
-function logar() {
+formulario.addEventListener("submit", async function(event) {
 
-    fetch("http://localhost:8080/usuarios",
-        {
-            headers:{
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            method: "GET",
-            body: JSON.stringify ({
-                email: Iemail.value,
-                senha: Isenha.value,
-            }),
+    event.preventDefault();
 
-        })
-        .then(function(res){ console.log(res) })
-        .catch(function(res){ console.log(res) }) 
-};
+   const email = document.getElementById("email").value;
+   const senha = document.getElementById("senha").value;
 
-function limpar (){
-    Inome.value = "";
-    Iemail.value = "";
-    Isenha.value = "";
-    Itelefone.value = "";
-};
+   const resposta = await fetch(
+    `http://localhost:8080/usuarios/login?email=${email}&senha=${senha}`
 
-formulario.addEventListener("submit", function (event) {
-    event.preventDefault(); // Impede o envio do formulário
+   );
 
-   logar(); // Chama a função de cadastro
-   limpar();
+   if (!resposta.ok) {
+    alert ("Email ou senha inválidos");
+   }
+
+   const usuario = await resposta.json();
+
+   window.location.href = `../perfil/index.html?id=${usuario.id}`;
+
 });
+
+
