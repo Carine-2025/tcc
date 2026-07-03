@@ -13,7 +13,98 @@ Orientador Prof. Hudson Luiz
 
 ------------------------------
 
-### Este é um simples projeto em que usuários realizam cadastro e acessam seus perfis, desenvolvido para exemplificar de forma prática e simples como ocorre a falha BOLA. Há duas branchs disponíveis, uma versão com o sistema sem veríficação de autorização e outra com um método de verificação de autorização implementado.
+### Este é um simples projeto em que usuários realizam cadastro e acessam seus perfis, desenvolvido para exemplificar de forma prática e simples como ocorre a falha BOLA. Há duas branches disponíveis, uma versão com o sistema sem veríficação de autorização, ou seja, com a vulnerabilidade BOLA, e outra com um mecanismo de verificação de autorização implementado.
+
+------------------------------
+
+## Conceitos trabalhados:
+
+- BOLA - Broken Object Level Authorization (Quebra de Autorização a Nível de Objeto): falha de API devido falta de mecanismos de autorização para acesso a objetos, tornando o sistema vulnerável ao acesso de informações por usuários não autorizados.
+- OWASP - Open Worldwide Application Security Project: fundação sem fins lucrativos, de atuação global e comunidade aberta, cujo objetivo é monitorar e propor melhorias de segurança para aplicações web e softwares em geral.
+- Autenticação: verificação de credenciais para liberação de acesso ao sistema.
+- Autorização: verificação de permissão de acesso do usuásio ao objeto requerido.
+- Front-end: interface onde o usuário realiza comandos
+- Back-end: lógica do software
+- API: técnica usada para realizar a conexão entre sistemas
+- Banco de Dados: local de armazenamento dos dados
+- Spring: ecossistema que reúne frameworks e ferramentas que facilitam o desenvolvimento de aplicações Java.
+```
+Ecossistema Spring
+│
+├── Spring Framework
+├── Spring Boot
+├── Spring Data JPA
+├── Spring Security
+├── Spring Web
+└── outros módulos
+```
+- Spring Boot: framework que facilita configuração e execução de aplicações Java.
+- Spring Data JPA: módulo específico do ecossistema Spring para tratar de persistência de dados.
+- DAO (Data Access Object): padrão usado para separar o acesso ao banco de dados da lógica do sistema.
+O DAO encapsula os comandos SQL e centraliza o CRUD em uma classe específica, evitando que comandos do
+banco fiquem espalhados pelo sistema. Usando Spring, os DAO's são criados automaticamente pelo Spring Data JPA.
+
+```
+SQL ← DAO ← Spring Data JPA
+          ↑
+     usado dentro do Spring Boot
+```
+
+## Ferramentas utilizadas:
+
+- IDE's
+  - VS Code
+  - Elipse: IDE utilizada para desenvolvimento Java
+  - MySQL Workbench: IDE para desenvolvimento de SQL e administração
+
+- Front-end:
+  - HTML (linguagem de marcação)
+  - CSS (linguagem de estilização)
+  - JavaScript (linguagem lógica)
+
+- Back-end:
+  - Java (linguagem lógica)
+
+- Banco de dados:
+  - SQL: (Structured Query Language) - linguagem padrão de consulta e manipulação de dados
+  - MariaDB: SGBD (Sistema Gerenciador de Banco de Dados) = software que guarda os dados e executa os comandos da linguagem
+
+- API:
+  - Spring Initializr: ferramenta para criação de API Java de forma simplificada e rápida. Gera código pronto com as configurações iniciais. <https://start.spring.io/>
+
+- Arquivo:
+  - JSON 
+  
+
+ ```
+ |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾| |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|
+ |             SQL                           JAVA - SPRING BOOT            | | HTML - CSS - JAVASCRIPT   |
+ |                                                                         | |                           |
+ |        Banco de Dados                         API REST                  | |        FRONT-END          |
+ |                                                                         | | |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|  | 
+ |        |‾‾‾‾‾‾‾‾‾‾‾‾|   <------      GET       A       GET      ------> | | |       USUÁRIO        |  |
+ |        |____________|               POST       P       POST             | | |  |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|  |  |
+ |        |            |    ------>     PUT       I       PUT      <------ | | |  |________________|  |  | 
+ |        |            |             DELETE               DELETE           | | |                      |  |
+ |        |‾‾‾‾‾‾‾‾‾‾‾‾|                                                   | | |        SENHA         |  |
+ |        |____________|                                                   | | |  |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|  |  |
+ |                                                                         | | |  |________________|  |  |
+ | |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|      Usuario=                          | | |                      |  |
+ | |           TABELA             |      {                                 | | |    |‾‾‾‾‾‾‾‾‾‾‾‾‾|   |  |
+ | |‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|        "id": 1,                        | | |    |   ENTRAR    |   |  |
+ | | ID         | 1               |        "nome": "jose",                 | | |    |_____________|   |  | 
+ | |‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|        "email": "email@gmail.com",     | | |______________________|  |
+ | | Nome       | jose            |        "senha": "***",                 | |                           |
+ | |‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|        "tel": "000"                    | |                           |
+ | | Email      | email@gmail.com |       }                                | |                           |
+ | |‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|          JSON                          | |                           |
+ | | Senha      | ***             |                                        | |                           |
+ | |‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|                                        | |                           |
+ | | Tel        | 000             |                                        | |                           |
+ |  ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾        BACK-END                         | |        FRONT-END          |
+ |_________________________________________________________________________| |___________________________|
+```
+------------------------------
 
 ## Camadas
 
@@ -213,92 +304,3 @@ API desenvolvida em Java com Spring Boot.
 
 * Todas as classes .class: São os seus arquivos Java originais traduzidos em bytecode para que o computador consiga executá-los. Essa pasta é gerada automaticamente sempre que você compila ou roda o projeto.
 
-------------------------------
-
-## Conceitos trabalhados:
-
-- BOLA - Broken Object Level Authorization (Quebra de Autorização a Nível de Objeto): falha de API devido falta de mecanismos de autorização para acesso a objetos, tornando o sistema vulnerável ao acesso de informações por usuários não autorizados.
-- OWASP - Open Worldwide Application Security Project: fundação sem fins lucrativos, de atuação global e comunidade aberta, cujo objetivo é monitorar e propor melhorias de segurança para aplicações web e softwares em geral.
-- Autenticação: verificação de credenciais para liberação de acesso ao sistema.
-- Autorização: verificação de permissão de acesso do usuásio ao objeto requerido.
-- Front-end: interface onde o usuário realiza comandos
-- Back-end: lógica do software
-- API: técnica usada para realizar a conexão entre sistemas
-- Banco de Dados: local de armazenamento dos dados
-- Spring: ecossistema que reúne frameworks e ferramentas que facilitam o desenvolvimento de aplicações Java.
-```
-Ecossistema Spring
-│
-├── Spring Framework
-├── Spring Boot
-├── Spring Data JPA
-├── Spring Security
-├── Spring Web
-└── outros módulos
-```
-- Spring Boot: framework que facilita configuração e execução de aplicações Java.
-- Spring Data JPA: módulo específico do ecossistema Spring para tratar de persistência de dados.
-- DAO (Data Access Object): padrão usado para separar o acesso ao banco de dados da lógica do sistema.
-O DAO encapsula os comandos SQL e centraliza o CRUD em uma classe específica, evitando que comandos do
-banco fiquem espalhados pelo sistema. Usando Spring, os DAO's são criados automaticamente pelo Spring Data JPA.
-
-```
-SQL ← DAO ← Spring Data JPA
-          ↑
-     usado dentro do Spring Boot
-```
-
-## Ferramentas utilizadas:
-
-- IDE's
-  - VS Code
-  - Elipse: IDE utilizada para desenvolvimento Java
-  - MySQL Workbench: IDE para desenvolvimento de SQL e administração
-
-- Front-end:
-  - HTML (linguagem de marcação)
-  - CSS (linguagem de estilização)
-  - JavaScript (linguagem lógica)
-
-- Back-end:
-  - Java (linguagem lógica)
-
-- Banco de dados:
-  - SQL: (Structured Query Language) - linguagem padrão de consulta e manipulação de dados
-  - MariaDB: SGBD (Sistema Gerenciador de Banco de Dados) = software que guarda os dados e executa os comandos da linguagem
-
-- API:
-  - Spring Initializr: ferramenta para criação de API Java de forma simplificada e rápida. Gera código pronto com as configurações iniciais. <https://start.spring.io/>
-
-- Arquivo:
-  - JSON 
-  
-
- ```
- |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾| |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|
- |             SQL                           JAVA - SPRING BOOT            | | HTML - CSS - JAVASCRIPT   |
- |                                                                         | |                           |
- |        Banco de Dados                         API REST                  | |        FRONT-END          |
- |                                                                         | | |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|  | 
- |        |‾‾‾‾‾‾‾‾‾‾‾‾|   <------      GET       A       GET      ------> | | |       USUÁRIO        |  |
- |        |____________|               POST       P       POST             | | |  |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|  |  |
- |        |            |    ------>     PUT       I       PUT      <------ | | |  |________________|  |  | 
- |        |            |             DELETE               DELETE           | | |                      |  |
- |        |‾‾‾‾‾‾‾‾‾‾‾‾|                                                   | | |        SENHA         |  |
- |        |____________|                                                   | | |  |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|  |  |
- |                                                                         | | |  |________________|  |  |
- | |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|      Usuario=                          | | |                      |  |
- | |           TABELA             |      {                                 | | |    |‾‾‾‾‾‾‾‾‾‾‾‾‾|   |  |
- | |‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|        "id": 1,                        | | |    |   ENTRAR    |   |  |
- | | ID         | 1               |        "nome": "jose",                 | | |    |_____________|   |  | 
- | |‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|        "email": "email@gmail.com",     | | |______________________|  |
- | | Nome       | jose            |        "senha": "***",                 | |                           |
- | |‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|        "tel": "000"                    | |                           |
- | | Email      | email@gmail.com |       }                                | |                           |
- | |‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|          JSON                          | |                           |
- | | Senha      | ***             |                                        | |                           |
- | |‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|                                        | |                           |
- | | Tel        | 000             |                                        | |                           |
- |  ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾        BACK-END                         | |        FRONT-END          |
- |_________________________________________________________________________| |___________________________|
-```
