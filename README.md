@@ -13,7 +13,7 @@ Orientador Prof. Hudson Luiz
 
 ------------------------------
 
-### Este é um simples projeto em que usuários realizam cadastro e acessam seus perfis, desenvolvido para exemplificar de forma prática e simples como ocorre a falha BOLA. Há duas branches disponíveis, uma versão com o sistema sem veríficação de autorização, ou seja, com a vulnerabilidade BOLA, e outra com um mecanismo de verificação de autorização implementado.
+#### Este é um simples projeto em que usuários realizam cadastro e acessam seus perfis, desenvolvido para exemplificar de forma prática e simples como ocorre a falha BOLA. Há duas branches disponíveis, uma versão com o sistema sem veríficação de autorização, ou seja, com a vulnerabilidade BOLA, e outra com um mecanismo de verificação de autorização implementado.
 
 ------------------------------
 
@@ -155,7 +155,7 @@ O fluxo de dados segue uma linha reta e hierárquica. Uma camada superior só co
 [ Banco de Dados ] (Salva a informação)
 ```
 
-### _Durante todo esse caminho, o Model é a estrutura do dado que está sendo transportada e transformada entre as camadas._
+#### _Durante todo esse caminho, o Model é a estrutura do dado que está sendo transportada e transformada entre as camadas._
 
 ## Estrutra de Pastas
 
